@@ -1,0 +1,37 @@
+@host=http://localhost:8080
+
+GET {{host}}/
+
+###
+POST {{host}}/
+Content-Type: application/json
+
+{
+    "full_link": "https://docs.google.com/document/d/1fuxDfg4Fk04BttxqbYsIdHBfMHskolO9/edit?usp=drive_web&ouid=105800827187344285272&rtpof=true"
+}
+
+# response:
+# HTTP/1.1 201 CREATED
+# Server: Werkzeug/2.2.2 Python/3.9.14
+# Date: Fri, 07 Oct 2022 13:31:07 GMT
+# Content-Type: application/json
+# Content-Length: 273
+# Connection: close
+
+# {
+#   "data": {
+#     "created_at": "Fri, 07 Oct 2022 13:31:07 GMT",
+#     "full_link": "https://docs.google.com/document/d/1fuxDfg4Fk04BttxqbYsIdHBfMHskolO9/edit?usp=drive_web&ouid=105800827187344285272&rtpof=true",
+#     "shorten_link": "QKH8JUB4Q2"
+#   },
+#   "status": "created"
+# }
+
+###
+POST {{host}}/
+Content-Type: application/json
+
+{
+    "full_link": "https://docs.google.com/document/d/1fuxDfg4Fk04BttxqbYsIdHBfMHskolO9/edit?usp=drive_web&ouid=105800827187344285272&rtpof=true",
+    "shorten_link" : "wildandocs"
+}
